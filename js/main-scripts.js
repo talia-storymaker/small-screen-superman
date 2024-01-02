@@ -149,3 +149,11 @@ var jumpList = document.getElementById("side-controls-list");
 		linksEntryLi.appendChild(linksEntryA);
 		jumpList.appendChild(linksEntryLi);
 	}
+
+  var tvSeriesOptions = "<ul><li><a href='/tv/aos'>Adventures of Superman</a></li><li><a href='/tv/lc'>Lois & Clark</a></li></ul>";
+	var connectOptions = "<ul><li><a href='/connect/links.php'>Links</a></li><li><a href='/connect'>Contact</a></li></ul>";
+	var nonTvOptions = "<ul><li><a href='/nontv/comics'>Comics</a></li><li><a href='/nontv/theatrical'>Theatrical</a></li>"
+	var fanworksOptions = "<ul><li><a href='/fanworks/graphics'>Graphics</a></li><li><a href='/superman-hangman/' target='_blank'>Hangman Game</a></li><li><a href='/fanworks/crosswords'>Crosswords</a></li>"
+	dropDown = document.getElementById('dropdown');
+	var mediaOptions = "<ul><li><a href='/media/screencaps.php'>Screencaps</a></li><li><a href='/media/other.php'>Other</a></li>"
+  
