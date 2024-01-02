@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{{ pageTitle }}</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106392745-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-106392745-2');
+    </script>
+    <link href="/styles/basicstyle.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <link href="/favicon.ico" ref="/icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+		<header>
+      <div class="branding" onmouseover="indicateNoneSelected();">
+        <a href="/index.php"><img src="/ssslogo.png" alt="Small Screen Superman logo"></a>
+      </div>
+      <nav>
+        <button id="nav-toggle" onclick="toggleMenu();" class="nav-toggle"><span id="open-menu">Open </span><span id="close-menu">Close </span>Menu</button>
+        <ul class="mainnav" id="mainnav">
+          <li onmouseover="dropDown.innerHTML = '';"><a href='/blog' target='_blank'>Blog</a></li><li onmouseover="dropDown.innerHTML = '';"><a href='https://www.youtube.com/channel/UCv62THYKblbLpRLCcK9LyGA' target='_blank'>YouTube</a></li><li onmouseover="dropDown.innerHTML = '';"><a href='https://discord.gg/PWVA2zW' target='_blank'>Discord</a></li><li onmouseover="dropDown.innerHTML = tvSeriesOptions;"><a href="/tv">TV Series Info</a></li><li onmouseover="dropDown.innerHTML = fanworksOptions;"><a href="/fanworks">Fanworks</a></li><li onmouseover="dropDown.innerHTML = connectOptions;"><a href="/connect">Connect</a></li>
+        </ul>
+        <div class="dropdown" id="dropdown"></div>
+      </nav>
+    </header>
+    <div class="contain-it-all" onmouseover="indicateNoneSelected();">
+      <main>
+        <h1 id="beginning">{{ contentTitle }}</h1>
+        {% if titleCard %}
+        <img class="titlecard" src="{{ titleCard.src }}" alt="{{ titleCard.alt }}">
+        {% endif %}
+        {{ content | raw }}
+      </main>
+    </div>
+    <footer><div>
+      Small Screen Superman is a Superman fansite by Talia Joy DeGisi Hatfield. 
+      Superman &copy; DC Comics. Site text &copy; Talia Hatfield.<br />
+      <a href="/">Site Home</a> - <a href="/blog">Blog Home</a>
+    </div></footer>
+		<script src="./js/main-scripts.js"></script>
+	</body>
+</html>		
