@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^templates.*$ / [L,R]
+RewriteRule ^(.*)-contents.html$ /$1.php [L,R]
+</IfModule>
