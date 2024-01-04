@@ -9,7 +9,7 @@ body {
 	font-family: 'Crimson Text', serif;
 	font-size: 1em;
 	background: #FFFFFF;
-	background: linear-gradient(to right, #CCCCCC, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF, #CCCCCC);
+	background: linear-gradient(to right, #ccc, #fff, #fff, #fff, #fff, #ccc);
 	margin: 0;
 	padding: 0;
 }
@@ -125,6 +125,7 @@ div.barrier-to-hide-dropdown {
 
 main {
 	max-width: 60%;
+	min-height: 70vh;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 15px;
