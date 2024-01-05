@@ -30,12 +30,14 @@
       </nav>
     </header>
     <div class="contain-it-all" onmouseover="indicateNoneSelected();">
+      {% block beforeMain %}{% endblock %}
       <main>
         <h1 id="beginning">{{ contentTitle | raw  }}</h1>
         {% if titleCard %}
         <img class="titlecard" src="{{ titleCard.src }}" alt="{{ titleCard.alt }}">
         {% endif %}
         {{ content | raw }}
+        {% block addlContent %}{% endblock %}
       </main>
     </div>
     <footer><div>
