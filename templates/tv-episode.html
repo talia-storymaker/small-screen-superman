@@ -10,26 +10,25 @@
 
 {% block addlContent %}
 
-  {% if hasGallery %}
+  {% if gallery %}
     <h2 id="gallery">Gallery</h2>
     <div class="gallery">
-      <img src="media/screencaps/thumbs/scr002_Kryptonian_council_in_the_Temple_of_Wisdom.png" alt="Kryptonian council in the Temple of Wisdom">
-      <img src="media/screencaps/thumbs/scr003_Jor-El_sitting_in_the_council.png" alt="Jor-El sitting in the council">
-      <img src="media/screencaps/thumbs/scr004_Ros-An_the_council_leader.png" alt="Ros-An, the council leader">
-      <img src="media/screencaps/thumbs/scr010_Baby_Kal-El.png" alt="Baby Kal-El">
-      <img src="media/screencaps/thumbs/scr016_Eben_Kent_retrieving_the_baby_Kal-El_from_the_burning_rocket.png" alt="Eben Kent retrieving the baby Kal-El from the burning rocket">
-      <img src="media/screencaps/thumbs/scr051_Clark's_first_appearance_as_Superman,_rescuing_the_man_dangling_on_a_rope_from_a_dirigible.png" alt="Clark's first appearance as Superman, rescuing the man dangling on a rope from a dirigible">
+      {% for img in gallery %}
+        <img 
+          src="media/screencaps/thumbs/{{ img }}" 
+          alt="{{ img[7:]|replace({'_': ' '})|trim('.png', 'right')|trim('.jpg', 'right') }}"
+        />
+      {% endfor %}
       <p>To see all {{ count(glob("media/screencaps/*.png")) }} images, go to the <a href="gallery.php">Gallery subpage</a>.
     </div>
   {% endif %}
 
-  {% if hasLinks %}
+  {% if links %}
     <h2 id="links">Links</h2>
 		<ul>
-			<li><a href="http://www.imdb.com/title/tt0506593/" target="_blank">IMDb Page</a></li>
-			<li><a href="http://www.jimnolt.com/SupermanOnEarthReview.htm" target="_blank"><i>The Adventures Continue</i> Review by Bruce Dettman</a></li>
-			<li><a href="http://www.jimnolt.com//SupermanOnEarth.htm" target="_blank"><i>The Adventures Continue</i> Comparative Review by Chris Brockow</a></li>
-			<li><a href="https://www.supermanhomepage.com/tv/tv.php?topic=reviews/aos-ep001" target="_blank"><i>Superman Homepage</i> Review by James Lantz</a></li>
+      {% for name, href in links %}
+			  <li><a href="{{ href }}" target="_blank">{{ name | raw }}</a></li>
+      {% endfor %}
 		</ul>
   {% endif %}
 
@@ -38,7 +37,7 @@
       <img src="" alt="">
       <figcaption></figcaption>
     </figure>
-    <div class="close" onclick="closeGallerySelection(click);">X</div>
+    <button class="close" onclick="closeGallerySelection(click);" aria-label="Close">X</button>
     <div class="galleryscroll left" onclick="scrollThroughImages('left')"><img src="/superman-left.png"></div>
     <div class="galleryscroll right" onclick="scrollThroughImages('right')"><img src="/superman-right.png"></div>
   </div>

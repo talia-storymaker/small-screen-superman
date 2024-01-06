@@ -18,7 +18,7 @@ body {
 	display: none;
 }
 
-div.contain-it-all {
+.contain-it-all {
 	width: 100%;
 }
 
@@ -101,16 +101,16 @@ nav a:hover {
 	background-color: #FFFFFF;
 }
 
-div.dropdown {
+.dropdown {
 	background-color: #565656;
 	color: #FFFFFF;
 }
 
-div.dropdown a:nth-of-type(1) li {
+.dropdown a:nth-of-type(1) li {
 	border-left: 1px #FFFFFF solid;
 }
 
-div.barrier-to-hide-dropdown {
+.barrier-to-hide-dropdown {
 	width: 100%;
 	height: 5px;
 	background-color: #F2D586;
@@ -175,7 +175,7 @@ a:hover {
 
 /* side controls */
 
-div.side-controls {
+.side-controls {
 	padding: 15px;
 	border-radius: 0 5px 5px 0;
 	float: left;
@@ -187,29 +187,29 @@ div.side-controls {
 	text-transform: uppercase;
 }
 
-div.side-controls p {
+.side-controls p {
 	margin-top: 0;
 	font-family: GravityBold, sans-serif;
 }
 
-div.side-controls ul {
+.side-controls ul {
 	list-style-type: '\25b8';
 }
 
-div.side-controls ul li:last-of-type {
+.side-controls ul li:last-of-type {
 	margin-bottom: 0;
 }
 
-div.side-controls a:link {
+.side-controls a:link {
 	color: #99d6ff;
 	text-decoration: none;
 }
 
-div.side-controls a:visited {
+.side-controls a:visited {
 	color: #99d6ff;
 }
 
-div.side-controls a:hover {
+.side-controls a:hover {
 	color: #FFFF00;
 	text-decoration: underline;
 }
@@ -238,11 +238,11 @@ footer a:hover, footer a:active, footer a:focus {
 
 /* gallery and lightbox */
 
-div.gallery img {
+.gallery img {
 	cursor: pointer;
 }
 
-div.galleryselection {
+.galleryselection {
 	position: fixed;
 	left: 0; 
 	top: 0; 
@@ -251,7 +251,7 @@ div.galleryselection {
 	background-color: rgba(0, 0, 0, 0.75);
 }
 
-div.galleryselection figure {
+.galleryselection figure {
 	position: fixed; 
 	display: block; 
 	top: 50%; 
@@ -262,12 +262,12 @@ div.galleryselection figure {
 	padding: 0;
 }
 
-div.galleryselection figure img {
+.galleryselection figure img {
 	margin: 0;
 	display: block;
 }
 
-div.galleryselection figure figcaption {
+.galleryselection figure figcaption {
 	background-color: #000000; 
 	color: #FFFFFF;
 	margin: 0;
@@ -275,18 +275,20 @@ div.galleryselection figure figcaption {
 	text-align: center;
 }
 
-div.close {
+.close {
 	position: fixed; 
-	top: 0%; 
-	right: 0%; 
+	top: 0; 
+	right: 0; 
 	margin: 10px; 
 	text-align: right; 
 	color: white; 
 	font-size: 2em; 
 	cursor: pointer;
+	background: none;
+  border: none;
 }
 
-div.galleryscroll {
+.galleryscroll {
 	position: fixed;
 	background-color: #000000;
 	border-radius: 5px;
@@ -294,14 +296,14 @@ div.galleryscroll {
 	cursor: pointer;
 }
 
-div.galleryscroll.left {
+.galleryscroll.left {
 	left: 0;
 	top: 50%;
 	transform: translateY(-50%);
 	border-left: none;
 }
 
-div.galleryscroll.right {
+.galleryscroll.right {
 	right: 0;
 	top: 50%;
 	transform: translateY(-50%);
@@ -374,7 +376,7 @@ figure.intext:hover figcaption {
 
 @media (max-width: 768px) {
 	
-	div.side-controls {
+	.side-controls {
 		position: relative;
 		float: none;
 	}
