@@ -37,7 +37,7 @@
 		
 		<h2 id="gallery">Gallery</h2>
 			<div class="gallery">
-				<p>To see all <?php echo count(glob("media/screencaps/*.png")) ?> images, go to the <a href="gallery.php">Gallery subpage</a>.</p>
+				<p>To see all <?php echo count(glob("media/screencaps/*.*")) ?> images, go to the <a href="gallery.php">Gallery subpage</a>.</p>
 			</div>
 		
 		<?php

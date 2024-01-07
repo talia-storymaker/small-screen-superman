@@ -19,7 +19,7 @@
           alt="{{ img[7:]|replace({'_': ' '})|trim('.png', 'right')|trim('.jpg', 'right') }}"
         />
       {% endfor %}
-      <p>To see all {{ count(glob("media/screencaps/*.png")) }} images, go to the <a href="gallery.php">Gallery subpage</a>.</p>
+      <p>To see all {{ count(glob("media/screencaps/*.*")) }} images, go to the <a href="gallery.php">Gallery subpage</a>.</p>
     </div>
   {% endif %}
 

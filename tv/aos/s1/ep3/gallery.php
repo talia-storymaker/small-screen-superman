@@ -14,10 +14,10 @@
 		<h1 id="beginning"><span class="seriesname">Adventures of Superman</span><br> Season 1 Episode 3: The Case of the Talkative Dummy</h1>
 		<h2 id="gallery">Gallery</h2>
 		<div class="gallery">
-			<p>There are currently <?php echo count(glob("media/screencaps/*.png")) ?> images for <a href="index.php">The Case of the Talkative Dummy</a>.</p>
+			<p>There are currently <?php echo count(glob("media/screencaps/*.*")) ?> images for <a href="index.php">The Case of the Talkative Dummy</a>.</p>
 			<?php
 				$dirname = "media/screencaps/thumbs/";
-				$images = glob($dirname."*.png");
+				$images = glob($dirname."*");
 
 				foreach($images as $image) {
 					echo '<img src="'.$image.'" class="gallery-item"> ';
