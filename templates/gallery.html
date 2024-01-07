@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block addlContent %}
+  <h2 id="gallery">Gallery</h2>
+  <div class="gallery">
+    <p>
+      There are currently {{ count(glob("media/screencaps/*.png")) }} images for 
+      <a href="index.php">Superman on Earth</a>.
+    </p>
+      {% set gallery = glob("media/screencaps/thumbs/*.png") %}
+
+      {% for img in gallery %}
+      <img 
+        src="{{ img }}" 
+        alt="{{ img|replace({'_': ' '})|trim('.png', 'right')|trim('.jpg', 'right')|regexReplace('/^.*[\\/]/','')[7:] }}"
+      />
+      {% endfor %}
+  </div>
+
+  <div id="galleryselection" class="galleryselection invisible">
+    <figure>
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="close" onclick="closeGallerySelection(click);" aria-label="Close">X</button>
+    <div class="galleryscroll left" onclick="scrollThroughImages('left')"><img src="/superman-left.png"></div>
+    <div class="galleryscroll right" onclick="scrollThroughImages('right')"><img src="/superman-right.png"></div>
+  </div>
+{% endblock addlContent %}
