@@ -4,6 +4,7 @@
 	--primary: #004d99;
 	--secondary: #a3211a;
 	--secondary-dark: #821a15;
+	--nav-bg-position: 0; /* this is updated by JS */
 }
 
 /* general */
@@ -41,7 +42,7 @@ h1 {
 	text-align: center;
 }
 
-h1 .seriesname{
+.seriesname{
 	font-size: 1.7em;
 }
 
@@ -53,10 +54,21 @@ header {
 	font-family: GravityBold, sans-serif;
 }
 
-header img {
+.branding {
+	background-color: var(--primary);
+	background-image: url("/styles/images/collage-banner.png");
+  background-blend-mode: luminosity;
+  background-position-x: var(--nav-bg-position);
+	border-bottom: .4rem var(--secondary) solid;
+}
+
+.branding img {
 	display: block;
-	margin: 8px auto;
-	max-width: 225px
+	margin: 0 auto;
+	max-width: 225px;
+	background: #fff;
+  padding: 5px;
+  box-shadow: 0 0 20px 20px #fff;
 }
 
 nav {
@@ -65,6 +77,12 @@ nav {
 	text-transform: uppercase;
 	width: 100%;
 	margin: 0;
+}
+
+.mainnav {
+	display: flex;
+	justify-content: center;
+	border-top: 1px #fff solid;
 }
 
 nav li:nth-of-type(1) a {
@@ -201,7 +219,7 @@ a:hover {
 	float: left;
 	position: sticky; 
 	top: 10px;
-	background-color: #11527A;
+	background-color: var(--primary);
 	color: #fff;
 	font-family: Gravity, sans-serif;
 	text-transform: uppercase;
@@ -257,6 +275,14 @@ footer a:hover, footer a:active, footer a:focus {
 }
 
 /* gallery and lightbox */
+
+.gallery {
+	display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+	margin-bottom: 5px;
+}
 
 .gallery img {
 	cursor: pointer;
@@ -395,6 +421,9 @@ figure.intext:hover figcaption {
 /* media queries */
 
 @media (max-width: 768px) {
+	.seriesname {
+		font-size: 1.2em;
+	}
 	
 	.side-controls {
 		position: relative;
@@ -475,5 +504,15 @@ figure.intext:hover figcaption {
 	
 	img.intext:nth-of-type(odd), img.intext:nth-of-type(even) {
 		float: none;
+	}
+
+	.galleryscroll.left, .galleryscroll.right {
+		top: 20px;
+		transform: none;
+	}
+
+	.galleryselection figure {
+		width: 100%;
+		border-width: 3px 0;
 	}
 }

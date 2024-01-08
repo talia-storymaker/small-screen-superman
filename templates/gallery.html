@@ -2,21 +2,21 @@
 
 {% block addlContent %}
   <h2 id="gallery">Gallery</h2>
+  <p>
+    There are currently {{ count(glob("media/screencaps/*.*")) }} images for 
+    <a href="index.php">this episode</a>.
+  </p>
   <div class="gallery">
-    <p>
-      There are currently {{ count(glob("media/screencaps/*.*")) }} images for 
-      <a href="index.php">this episode</a>.
-    </p>
-      {% set gallery = glob("media/screencaps/thumbs/*.*") %}
+    {% set gallery = glob("media/screencaps/thumbs/*.*") %}
 
-      {% for img in gallery %}
+    {% for img in gallery %}
       <img 
         src="{{ img }}" 
         alt="{{ 
           img|replace({'_': ' '})|trim('.png', 'right')|trim('.jpg', 'right')|regexReplace('/^.*[\\/]/','')[7:] 
         }}"
       />
-      {% endfor %}
+    {% endfor %}
   </div>
 
   <div id="galleryselection" class="galleryselection invisible">
