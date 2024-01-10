@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>{{ pageTitle}}</title>
+		<title>{{ pageTitle }}</title>
     <script src="/js/top-scripts.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106392745-2"></script>
     <script>
@@ -11,11 +11,17 @@
 
       gtag('config', 'UA-106392745-2');
     </script>
-    <link href="/styles/basicstyle.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
-    <link href="/favicon.ico" ref="/icon">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <link href="/styles/basicstyle.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" />
+    <link href="/favicon.ico" ref="/icon" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:site_name" content="Small Screen Superman" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    {% if titleCard %}
+      <meta property="og:image" content="{{ titleCard.src }}" />
+      <meta property="og:image:alt" content="{{ titleCard.alt }}" />
+    {% endif %}
 	</head>
 	<body>
 		<header>
