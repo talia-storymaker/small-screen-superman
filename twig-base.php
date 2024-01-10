@@ -7,4 +7,5 @@ $twig->addFilter(
   return preg_replace($pattern, $replacement, $string);
 }));
 $twig->addExtension(new \Twig\Extension\PhpFunctionExtension());
+$twig->addGlobal('siteRoot', $_SERVER['DOCUMENT_ROOT'] . '/');
 ?>
