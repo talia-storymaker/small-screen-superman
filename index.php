@@ -7,6 +7,7 @@ echo $twig->render('layout.html', [
   'titleCard' => array(
     'src' => 'aos-superman-intro-stance.jpg',
     'alt' => 'George Reeves as Superman in the Adventures of Superman TV show intro'
-  )
+  ),
+  'description' => 'Superman fansite featuring information about TV episodes, games to test your Superman knowledge, a blog, and more.'
 ]);
 ?>

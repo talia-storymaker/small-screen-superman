@@ -22,6 +22,7 @@ echo $twig->render('/tv-episode.html', [
     '<i>The Adventures Continue</i> Comparative Review by Chris Brockow' => 'http://www.jimnolt.com//SupermanOnEarth.htm',
     '<i>Superman Homepage</i> Review by James Lantz' => 'https://www.supermanhomepage.com/tv/tv.php?topic=reviews/aos-ep001',
     'Transcript' => 'https://subslikescript.com/series/Adventures_of_Superman-44231/season-1/episode-1-Superman_on_Earth'
-  )
+  ),
+  'description' => 'Information, gallery, and more about Superman on Earth, the first episode of Adventures of Superman.'
 ]);
 ?>

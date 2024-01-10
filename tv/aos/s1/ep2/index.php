@@ -20,6 +20,7 @@ echo $twig->render('/tv-episode.html', [
     '<i>The Adventures Continue</i> Review by Bruce Dettman' => 'http://www.jimnolt.com/HauntedLighthouseReview.htm',
     '<i>Superman Homepage</i> Review by James Lantz' => 'https://www.supermanhomepage.com/tv/tv.php?topic=reviews/aos-ep002',
     'Transcript' => 'https://subslikescript.com/series/Adventures_of_Superman-44231/season-1/episode-2-The_Haunted_Lighthouse'
-  )
+  ),
+  'description' => 'Information, gallery, and more about The Haunted Lighthouse, the second episode of Adventures of Superman.'
 ]);
 ?>

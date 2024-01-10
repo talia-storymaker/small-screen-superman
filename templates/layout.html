@@ -23,6 +23,10 @@
     {% if titleCard %}
       <meta property="og:image" content="{{ currentDir }}{{ titleCard.src }}" />
       <meta property="og:image:alt" content="{{ titleCard.alt }}" />
+      <meta name="twitter:card" content="summary_large_image" />
+    {% endif %}
+    {% if description %}
+      <meta property="og:description" content="{{ description }}" />
     {% endif %}
 	</head>
 	<body>
