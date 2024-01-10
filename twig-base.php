@@ -7,5 +7,5 @@ $twig->addFilter(
   return preg_replace($pattern, $replacement, $string);
 }));
 $twig->addExtension(new \Twig\Extension\PhpFunctionExtension());
-$twig->addGlobal('siteRoot', $_SERVER['DOCUMENT_ROOT'] . '/');
+$twig->addGlobal('currentDir', preg_replace('/[^\/]+$/', '', "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));
 ?>
