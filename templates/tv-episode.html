@@ -14,10 +14,12 @@
     <h2 id="gallery">Gallery</h2>
     <div class="gallery">
       {% for img in gallery %}
-        <img 
-          src="media/screencaps/thumbs/{{ img }}" 
-          alt="{{ img[7:]|replace({'_': ' '})|trim('.png', 'right')|trim('.jpg', 'right') }}"
-        />
+        <a href="media/screencaps/{{ img }}" target="_blank">
+          <img 
+            src="media/screencaps/thumbs/{{ img }}" 
+            alt="{{ img[7:]|replace({'_': ' '})|replace({'.png': '', '.jpg': ''}) }}"
+          />
+        </a>  
       {% endfor %}
     </div>
     <p>To see all {{ count(glob("media/screencaps/*.*")) }} images, go to the <a href="gallery.php">Gallery subpage</a>.</p>
@@ -32,13 +34,5 @@
 		</ul>
   {% endif %}
 
-  <div id="galleryselection" class="galleryselection invisible">
-    <figure>
-      <img src="" alt="">
-      <figcaption></figcaption>
-    </figure>
-    <button class="close" onclick="closeGallerySelection(click);" aria-label="Close">X</button>
-    <div class="galleryscroll left" onclick="scrollThroughImages('left')"><img src="/superman-left.png"></div>
-    <div class="galleryscroll right" onclick="scrollThroughImages('right')"><img src="/superman-right.png"></div>
-  </div>
+  {{ include('gallery-selection.html') }}
 {% endblock addlContent %}

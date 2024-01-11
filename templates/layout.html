@@ -83,7 +83,12 @@
         {% if titleCard %}
         <img class="titlecard" src="{{ titleCard.src }}" alt="{{ titleCard.alt }}">
         {% endif %}
-        {{ content | raw }}
+        {{ content | replace({
+          '[IMG_FULL:]': '<figure class="intext"><a href=',
+          '[IMG_THUMB:]': ' target="_blank"><img src=',
+          '[IMG_ALT:]': ' alt=',
+          '[IMG_END]': '/></a><figcaption></figcaption></figure>'
+        }) | raw }}
         {% block addlContent %}{% endblock %}
       </main>
     </div>

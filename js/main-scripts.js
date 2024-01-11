@@ -1,19 +1,22 @@
 function populateIntextFigcaptions() {
   var intextFigures = document.querySelectorAll("figure.intext");
-  for (i = 0; i < intextFigures.length; i++) {
-    intextFigures[i].lastChild.innerHTML = intextFigures[i].firstChild.alt;
+  for (var intextFigure of intextFigures) {
+    intextFigure.lastChild.innerHTML = intextFigure.firstChild.firstChild.alt;
   }
 }
 
-function displayGalleryImage() {
+function displayGalleryImage(event) {
+  event.preventDefault();
   displayAnyGalleryImage(this);
 }
 
-function displayAnyGalleryImage(selectedImage) {
+function displayAnyGalleryImage(clicked) {
   document.getElementById('galleryselection').className = "galleryselection";
-  var fullSizeImage = selectedImage.src.replace("/thumbs", "");
+  var fullSizeImage = clicked.href;
+  var selectedImage = clicked.querySelector("img");
+  document.querySelector("div.galleryselection figure a").href = fullSizeImage;
+  document.querySelector("div.galleryselection figure a").id = clicked.id.replace("able", "ed");
   document.querySelector("div.galleryselection figure img").src = fullSizeImage;
-  document.querySelector("div.galleryselection figure img").id = selectedImage.id.replace("able", "ed");
   document.querySelector("div.galleryselection figure img").alt = selectedImage.alt;
   document.querySelector("div.galleryselection figure figcaption").innerHTML = selectedImage.alt;
 }
@@ -27,19 +30,20 @@ function closeGallerySelection(click) {
 
 function addImageNumberIds() {
   var number = 1;
-  for (var i = 0; i < document.querySelectorAll("figure.intext img").length; i++) {
-    document.querySelectorAll("figure.intext img")[i].id = "selectableimage" + number;
+  for (var i = 0; i < document.querySelectorAll("figure.intext a").length; i++) {
+    document.querySelectorAll("figure.intext a")[i].id = "selectableimage" + number;
     number += 1;
   }
-  for (var i = 0; i < document.querySelectorAll("div.gallery img").length; i++) {
-    document.querySelectorAll("div.gallery img")[i].id = "selectableimage" + number;
+  for (var i = 0; i < document.querySelectorAll("div.gallery a").length; i++) {
+    document.querySelectorAll("div.gallery a")[i].id = "selectableimage" + number;
     number += 1;
   }
 }
 
 function scrollThroughImages(direction) {
   var directionNumber;
-  var currentImageIdNumber = parseInt(document.querySelector("div.galleryselection figure img").id.slice(13));
+  var currentImageIdNumber = parseInt(document.querySelector("div.galleryselection figure a").id.slice(13));
+  console.log("thing", (document.querySelector("div.galleryselection figure a")))
   if (direction === "left") {
     directionNumber = -1;
   }
@@ -63,11 +67,11 @@ function toggleMenu() {
   }
 }
 
-for (var i = 0; i < document.querySelectorAll("div.gallery img").length; i++) {
-  document.querySelectorAll("div.gallery img")[i].addEventListener("click", displayGalleryImage, false);
+for (var i = 0; i < document.querySelectorAll("div.gallery a").length; i++) {
+  document.querySelectorAll("div.gallery a")[i].addEventListener("click", displayGalleryImage, true);
 }
-for (var i = 0; i < document.querySelectorAll("figure.intext img").length; i++) {
-  document.querySelectorAll("figure.intext img")[i].addEventListener("click", displayGalleryImage, false);
+for (var i = 0; i < document.querySelectorAll("figure.intext a").length; i++) {
+  document.querySelectorAll("figure.intext a")[i].addEventListener("click", displayGalleryImage, true);
 }
 window.addEventListener("click", closeGallerySelection, false);
 addImageNumberIds();
