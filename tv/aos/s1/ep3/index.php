@@ -4,14 +4,14 @@ echo $twig->render('/tv-episode.html', [
   'pageTitle' => 'Adventures of Superman: The Case of the Talkative Dummy - Small Screen Superman', 
   'contentTitle' => "<span class='seriesname'>Adventures of Superman</span><br /> Season 1 Episode 3: The Case of the Talkative Dummy",
   'titleCard' => array(
-    'src' => 'media/screencaps/scr001_Titlecard.png',
+    'src' => 'media/screencaps/scr001_Titlecard.jpg',
     'alt' => 'Titlecard for Adventures of Superman: The Case of the Talkative Dummy'
   ),
   'content' => file_get_contents('index-contents.html'),
   'gallery' => array(
-    "scr008_Lois_and_Clark_questioning.png",
-    "scr035_Superman_delivers_the_unharmed_Jimmy_to_Lois.png",
-    "scr052_Clark,_Lois,_and_Henderson.png"
+    "scr008_Lois_and_Clark_questioning.jpg",
+    "scr035_Superman_delivers_the_unharmed_Jimmy_to_Lois.jpg",
+    "scr052_Clark,_Lois,_and_Henderson.jpg"
   ),
   'links' => array(
     'IMDb Page' => 'http://www.imdb.com/title/tt0506604/',
