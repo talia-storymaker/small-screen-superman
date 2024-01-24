@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Not Yet Created - Small Screen Superman</title>
-		<?php
-			include_once $_SERVER['DOCUMENT_ROOT'] . 'head.php';
-		?>
-	</head>
-	<body>
-		<?php
-			include_once $_SERVER['DOCUMENT_ROOT'] . 'header.php';
-		?>
-		<main>
-		<h1 id="beginning">Check Back Later</h1>
-		<p>Alas, this page hasn't been made yet. Check back soon!</p>
-		</main>
-		<?php
-			include_once $_SERVER['DOCUMENT_ROOT'] . 'footer.php';
-		?>
-		
-	</body>
-</html>		
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/twig-base.php';
+echo $twig->render('/gallery.html', [
+  'pageTitle' => 'Gallery for Adventures of Superman: The Mind Machine - Small Screen Superman', 
+  'contentTitle' => "<span class='seriesname'>Adventures of Superman</span><br /> Season 1 Episode 8: The Mind Machine",
+]);
+?>

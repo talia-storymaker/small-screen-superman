@@ -14,7 +14,7 @@
         <img 
           src="{{ img }}" 
           alt="{{ 
-            img|replace({'_': ' '})|regexReplace('/^.*[\\/]/','')[7:]|replace({'.png': '', '.jpg': '', 'COLON': ':'}) 
+            img|replace({'_': ' '})|regexReplace('/^.*[\\/]/','')[7:]|replace({'.png': '', '.jpg': '', 'COLON': ':', "''": '"'}) 
           }}"
         />
       </a>
