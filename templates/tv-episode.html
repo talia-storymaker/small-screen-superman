@@ -1,4 +1,9 @@
 {% extends "layout.html" %}
+{% set pageTitle = "#{show}: #{epTitle} - Small Screen Superman" %}
+{% set titleCard = {'src': 'media/screencaps/scr001_Titlecard.jpg', 'alt': 'Titlecard for #{show}: #{epTitle}'} %}
+{% set contentTitle = 
+  "<span class='seriesname'>#{show}</span><br /> Season #{sNum} Episode #{epNum}: #{epTitle}" 
+%}
 
 {% block beforeMain %}
   <div class="side-controls"><p>Jump to:</p>
@@ -25,14 +30,31 @@
     <p>To see all {{ count(glob("media/screencaps/*.*")) }} images, go to the <a href="gallery.php">Gallery subpage</a>.</p>
   {% endif %}
 
-  {% if links %}
     <h2 id="links">Links</h2>
 		<ul>
+      {% if show %}
+        {% if imdbId %}
+          <li><a href="https://www.imdb.com/title/{{ imdbId }}" target="_blank">IMDb Page</a></li>
+        {% endif %}
+        {% if tacId %}
+          <li><a href="http://www.jimnolt.com/{{ tacId }}.htm" target="_blank">
+            <i>The Adventures Continue</i> Review by Bruce Dettman
+          </a></li>
+        {% endif %}
+        <li><a href="https://www.supermanhomepage.com/tv/tv.php?topic=reviews/aos-ep00{{ overallEpNum }}" target="_blank">
+          <!-- TODO: make it work if the episode number is more than 1 digit -->
+          <i>Superman Homepage</i> Review by James Lantz
+        </a></li>
+        {% if not noTranscript %}
+        <li><a href=
+          "https://subslikescript.com/series/Adventures_of_Superman-44231/season-{{ sNum }}/episode-{{ epNum }}-{{ epTitle|replace({' ': '_'}) }}" 
+          target="_blank">Transcript</a></li>
+        {% endif %}
+      {% endif %}
       {% for name, href in links %}
 			  <li><a href="{{ href }}" target="_blank">{{ name | raw }}</a></li>
       {% endfor %}
 		</ul>
-  {% endif %}
 
   {{ include('gallery-selection.html') }}
 {% endblock addlContent %}
