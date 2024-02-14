@@ -67,6 +67,10 @@ function toggleMenu() {
   }
 }
 
+if (window.innerWidth >= 1024 && document.getElementsByClassName("side-controls")[0]) {
+  document.getElementsByClassName("side-controls")[0].setAttribute("open", "");
+}
+
 for (var i = 0; i < document.querySelectorAll("div.gallery a").length; i++) {
   document.querySelectorAll("div.gallery a")[i].addEventListener("click", displayGalleryImage, true);
 }

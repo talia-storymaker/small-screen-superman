@@ -225,12 +225,12 @@ a:hover {
 	text-transform: uppercase;
 }
 
-.side-controls p {
-	margin-top: 0;
+.side-controls summary {
 	font-family: GravityBold, sans-serif;
 }
 
 .side-controls ul {
+	margin-top: 1em;
 	list-style-type: '\25b8';
 }
 
@@ -420,14 +420,16 @@ figure.intext:hover figcaption {
 
 /* media queries */
 
-@media (max-width: 768px) {
-	.seriesname {
-		font-size: 1.2em;
-	}
-	
+@media (max-width: 1023px) {
 	.side-controls {
 		position: relative;
 		float: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.seriesname {
+		font-size: 1.2em;
 	}
 	
 	img {

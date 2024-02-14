@@ -6,7 +6,7 @@
 %}
 
 {% block beforeMain %}
-  <div class="side-controls"><p>Jump to:</p>
+  <details class="side-controls"><summary>Jump to:</summary>
     <ul id="side-controls-list">
       <li><a href="#beginning">Beginning</a></li>
       {% if '<h2 id="summary">Summary</h2>' in content %}
@@ -26,7 +26,7 @@
       {% endif %}
       <li><a href="#links">Links</a></li>
     </ul>
-  </div>
+  </details>
 {% endblock beforeMain %}
 
 {% block addlContent %}
