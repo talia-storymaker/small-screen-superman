@@ -9,6 +9,22 @@
   <div class="side-controls"><p>Jump to:</p>
     <ul id="side-controls-list">
       <li><a href="#beginning">Beginning</a></li>
+      {% if '<h2 id="summary">Summary</h2>' in content %}
+        <li><a href="#summary">Summary</a></li>
+      {% endif %}
+      {% if '<h2 id="synopsis">Synopsis</h2>' in content %}
+        <li><a href="#synopsis">Synopsis</a></li>
+      {% endif %}
+      {% if '<h2 id="notes">Notes</h2>' in content %}
+        <li><a href="#notes">Notes</a></li>
+      {% endif %}
+      {% if '<h2 id="review">Review</h2>' in content %}
+        <li><a href="#review">Review</a></li>
+      {% endif %}
+      {% if gallery %}
+        <li><a href="#gallery">Gallery</a></li>
+      {% endif %}
+      <li><a href="#links">Links</a></li>
     </ul>
   </div>
 {% endblock beforeMain %}
