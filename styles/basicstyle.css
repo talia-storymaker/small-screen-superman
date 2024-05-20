@@ -46,7 +46,7 @@ h1 {
 	text-align: center;
 }
 
-.seriesname{
+.seriesname {
 	font-size: 1.7em;
 }
 
@@ -166,13 +166,28 @@ nav li:focus-within ul, nav li:hover ul {
 	display: none;
 }
 
+.breadcrumb {
+	background-color: var(--secondary);
+	border-top: 1px #fff solid;
+	color: #fff;
+	padding: 5px 0.875rem;
+}
+
+.breadcrumb a, .breadcrumb a:link, .breadcrumb a:visited,
+.breadcrumb a:hover, .breadcrumb a:focus {
+	color: #fff;
+}
+
 /* content */
 
-main {
+.main-container {
 	max-width: 60%;
-	min-height: 70vh;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+main {
+	min-height: 70vh;
 	padding: 15px;
 	background-color: #fff;
 	box-shadow: 1px 1px 3px #004d9932;
@@ -426,6 +441,15 @@ figure.intext:hover figcaption {
 /* media queries */
 
 @media (max-width: 1023px) {
+	.main-container {
+		margin-top: 2rem;
+	}
+
+	.breadcrumb a {
+		display: inline-block;
+		padding: 0.875rem;
+	}
+
 	.side-controls {
 		position: relative;
 		float: none;
@@ -441,7 +465,7 @@ figure.intext:hover figcaption {
 		max-width: 100%;
 	}
 	
-	main {
+	.main-container {
 		max-width: 100%;
 	}
 	

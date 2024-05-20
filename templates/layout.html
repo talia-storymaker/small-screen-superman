@@ -78,19 +78,28 @@
     </header>
     <div class="contain-it-all">
       {% block beforeMain %}{% endblock %}
-      <main>
-        <h1 id="beginning">{{ contentTitle | raw }}</h1>
-        {% if titleCard %}
-        <img class="titlecard" src="{{ titleCard.src }}" alt="{{ titleCard.alt }}">
+      <div class="main-container">
+        {% if show == "Adventures of Superman" %}
+        <div class="breadcrumb">
+          <a href="/tv/">TV Series Info</a>
+          <span aria-label="Arrow pointing right"> > </span>
+          <a href="/tv/aos/">Adventures of Superman</a>
+        </div>
         {% endif %}
-        {{ content | replace({
-          '[IMG_FULL:]': '<figure class="intext"><a href=',
-          '[IMG_THUMB:]': ' target="_blank"><img src=',
-          '[IMG_ALT:]': ' alt=',
-          '[IMG_END]': '/></a><figcaption></figcaption></figure>'
-        }) | raw }}
-        {% block addlContent %}{% endblock %}
-      </main>
+        <main>
+          <h1 id="beginning">{{ contentTitle | raw }}</h1>
+          {% if titleCard %}
+          <img class="titlecard" src="{{ titleCard.src }}" alt="{{ titleCard.alt }}">
+          {% endif %}
+          {{ content | replace({
+            '[IMG_FULL:]': '<figure class="intext"><a href=',
+            '[IMG_THUMB:]': ' target="_blank"><img src=',
+            '[IMG_ALT:]': ' alt=',
+            '[IMG_END]': '/></a><figcaption></figcaption></figure>'
+          }) | raw }}
+          {% block addlContent %}{% endblock %}
+        </main>
+      </div>
     </div>
     <footer><div>
       Small Screen Superman is a Superman fansite by Talia Joy DeGisi Hatfield. 
