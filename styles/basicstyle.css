@@ -2,6 +2,7 @@
 
 :root {
 	--primary: #004d99;
+	--primary-dark: #003366;
 	--secondary: #a3211a;
 	--secondary-dark: #821a15;
 	--nav-bg-position: 0; /* this is updated by JS */
@@ -167,7 +168,7 @@ nav li:focus-within ul, nav li:hover ul {
 }
 
 .breadcrumb {
-	background-color: var(--secondary);
+	background-color: var(--primary-dark);
 	border-top: 1px #fff solid;
 	color: #fff;
 	padding: 5px 0.875rem;
@@ -176,6 +177,10 @@ nav li:focus-within ul, nav li:hover ul {
 .breadcrumb a, .breadcrumb a:link, .breadcrumb a:visited,
 .breadcrumb a:hover, .breadcrumb a:focus {
 	color: #fff;
+}
+
+.breadcrumb a:hover, .breadcrumb a:focus {
+	background: var(--secondary-dark);
 }
 
 /* content */
