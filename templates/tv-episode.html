@@ -57,7 +57,7 @@
             <i>The Adventures Continue</i> Review by Bruce Dettman
           </a></li>
         {% endif %}
-        <li><a href="https://www.supermanhomepage.com/tv/tv.php?topic=reviews/aos-ep00{{ overallEpNum }}" target="_blank">
+        <li><a href="https://www.supermanhomepage.com/tv/tv.php?topic=reviews/aos-ep0{{ overallEpNum|addZeroIfNeeded }}" target="_blank">
           <!-- TODO: make it work if the episode number is more than 1 digit -->
           <i>Superman Homepage</i> Review by James Lantz
         </a></li>
@@ -73,4 +73,5 @@
 		</ul>
 
   {{ include('gallery-selection.html') }}
+  {{ basename(getMagicDir()) }}`
 {% endblock addlContent %}
