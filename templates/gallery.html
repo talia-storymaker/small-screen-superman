@@ -1,4 +1,10 @@
 {% extends "layout.html" %}
+{% set content = '' %}
+{% set show = "Adventures of Superman" %} {# temporary? change if I add other shows #}
+{% set sNum = 1 %} {# temporary - change when I add more seasons #}
+{% set epNum = currentDir|regexMatchOnce('/ep[0-9]{1,2}/')|substr(2) %}
+{% set pageTitle = "Gallery for #{show}: #{epTitle} - Small Screen Superman" %}
+{% set contentTitle = "<span class='seriesname'>#{show}</span><br /> Season #{sNum} Episode #{epNum}: #{epTitle}" %}
 
 {% block addlContent %}
   <h2 id="gallery">Gallery</h2>

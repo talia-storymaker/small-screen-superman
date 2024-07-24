@@ -1,12 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/twig-base.php';
 echo $twig->render('/tv-episode.html', [
-  'show' => 'Adventures of Superman',
-  'sNum' => 1,
-  'epNum' => 5,
-  'overallEpNum' => 5,
   'epTitle' => 'The Monkey Mystery',
-  'content' => file_get_contents('index-contents.html'),
   'gallery' => array(
     'scr012_Pepi_the_monkey_in_a_Superman_costume_playing_cymbals.jpg',
     'scr013_Clark_Kent,_Lois_Lane,_and_a_crowd_of_kids_look_at_the_monkey_and_organ_grinder.jpg',
@@ -15,7 +10,6 @@ echo $twig->render('/tv-episode.html', [
     'scr072_Superman_knocks_the_heads_of_the_criminals,_Max_and_Crane,_together.jpg'
   ),
   'imdbId' => 'tt0506627',
-  'tacId' => 'MonkeyMysteryReview',
-  'description' => 'Information, gallery, and more about The Haunted Lighthouse, the fourth episode of Adventures of Superman.'
+  'tacId' => 'MonkeyMysteryReview'
 ]);
 ?>

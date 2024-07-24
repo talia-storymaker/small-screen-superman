@@ -26,6 +26,7 @@
       <meta name="twitter:card" content="summary_large_image" />
     {% endif %}
     {% if description %}
+      <meta name="description" content="{{ description }}" />
       <meta property="og:description" content="{{ description }}" />
     {% endif %}
 	</head>
@@ -80,11 +81,15 @@
       {% block beforeMain %}{% endblock %}
       <div class="main-container">
         {% if show == "Adventures of Superman" %}
-        <div class="breadcrumb">
+        <nav class="breadcrumb" aria-label="Breadcrumbs">
           <a href="/tv/">TV Series Info</a>
-          <span aria-label="Arrow pointing right"> > </span>
+          <span aria-hidden> > </span>
           <a href="/tv/aos/">Adventures of Superman</a>
-        </div>
+          {% if filename == "gallery.php" %}
+          <span aria-hidden> > </span>
+          <a href="index.php">{{ epTitle }}</a>
+          {% endif %}
+        </nav>
         {% endif %}
         <main>
           <h1 id="beginning">{{ contentTitle | raw }}</h1>

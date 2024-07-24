@@ -1,12 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/twig-base.php';
 echo $twig->render('/tv-episode.html', [
-  'show' => 'Adventures of Superman',
-  'sNum' => 1,
-  'epNum' => 2,
-  'overallEpNum' => 2,
   'epTitle' => 'The Haunted Lighthouse',
-  'content' => file_get_contents('index-contents.html'),
   'gallery' => array(
     "scr002_Jim_meets_Aunt_Louisa.jpg",
     "scr005_The_housekeeper_Alice.jpg",
@@ -16,6 +11,5 @@ echo $twig->render('/tv-episode.html', [
   ),
   'imdbId' => 'tt0506615',
   'tacId' => 'HauntedLighthouseReview',
-  'description' => 'Information, gallery, and more about The Haunted Lighthouse, the second episode of Adventures of Superman.'
 ]);
 ?>

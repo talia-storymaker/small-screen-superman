@@ -76,25 +76,23 @@ header {
   box-shadow: 0 0 20px 20px #fff;
 }
 
-nav {
+.mainnav {
 	background-color: var(--primary);
 	color: #fff;
 	text-transform: uppercase;
 	width: 100%;
 	margin: 0;
-}
-
-.mainnav {
 	display: flex;
 	justify-content: center;
 	border-top: 1px #fff solid;
+	box-sizing: border-box;
 }
 
-nav li:nth-of-type(1) a {
+.mainnav li:nth-of-type(1) a {
 	border-left: 1px #fff solid;
 }
 
-nav li {
+.mainnav li {
 	list-style-type: none;
 	display: inline-block;
 	margin-top: 5px;
@@ -103,32 +101,32 @@ nav li {
 	border-width: 0 1px 0 0;
 }
 
-nav a {
+.mainnav a {
 	padding: 12px;
 	display: inline-block;
 }
 
-nav a:link {
+.mainnav a:link {
 	color: #fff;
 	text-decoration: none;
 }
 
-nav a:link, a:visited {
+.mainnav a:link, .mainnav a:visited {
 	text-decoration: none;
 }
 
-nav a:visited {
+.mainnav a:visited {
 	color: #fff;
 	text-decoration: none;
 }
 
-nav a:hover, nav a:focus {
+.mainnav a:hover, .mainnav a:focus {
 	background-color: #fff;
 	color: var(--primary);
 	text-decoration: none;
 }
 
-nav li ul {
+.mainnav li ul {
 	display: none;
 	background-color: var(--secondary);
 	color: #fff;
@@ -136,30 +134,30 @@ nav li ul {
 	padding-left: 0;
 }
 
-nav li li {
+.mainnav li li {
 	display: block;
 	border-width: 0 0 1px 0;
 	margin: 0;
 }
 
-nav li li:last-of-type {
+.mainnav li li:last-of-type {
 	border-bottom: none;
 }
 
-nav li li a {
+.mainnav li li a {
 	display: block;
 }
 
-nav li li a:hover, nav li li a:focus {
+.mainnav li li a:hover, .mainnav li li a:focus {
 	background-color: var(--secondary-dark);
 	color: #fff;
 } 
 
-nav li li:nth-of-type(1) a {
+.mainnav li li:nth-of-type(1) a {
 	border-width: 0;
 }
 
-nav li:focus-within ul, nav li:hover ul {
+.mainnav li:focus-within ul, .mainnav li:hover ul {
 	display: block;
 }
 
@@ -204,11 +202,14 @@ main p {
 }
 
 main li {
-	list-style-type: none;
 	background: url(images/aos-logo-bullet.png) no-repeat left top;
 	padding-left: 40px;
 	min-height: 20px;
 	font-size: 1.1em;
+}
+
+main ul li {
+	list-style-type: none;
 }
 
 img {
@@ -474,20 +475,20 @@ figure.intext:hover figcaption {
 		max-width: 100%;
 	}
 	
-	nav {
+	.mainnav {
 		padding: 0;
 		margin: 0;
 		width: 100%;
 		box-sizing: border-box;
 	}
 	
-	nav ul {
+	.mainnav ul {
 		padding: 0;
 		margin: 0;
 		text-align: left;
 	}
 	
-	nav li {
+	.mainnav li {
 		border-bottom: 1px #fff solid;
 		border-right: none;
 		margin: 0;
@@ -497,16 +498,16 @@ figure.intext:hover figcaption {
 		box-sizing: border-box;
 	}
 	
-	nav li:nth-of-type(1) a {
+	.mainnav li:nth-of-type(1) a {
 		border-left: none;
 	}
 
-	nav a {
+	.mainnav a {
 		display: block;
 		padding: 20px;
 	}
 
-	nav li ul {
+	.mainnav li ul {
 		display: block;
 		position: static;
 		border-top: 1px #fff solid;
@@ -514,12 +515,13 @@ figure.intext:hover figcaption {
 	}
 	
 	.nav-toggle {
+		background-color: var(--primary);
+		color: #fff;
+		width: 100%;
+    box-sizing: border-box;
 		display: block;
-		width: inherit;
 		font-family: inherit;
-		color: inherit;
 		font-size: inherit;
-		background: transparent;
 		border-bottom: 1px #fff solid;
 		padding: 20px;
 	}

@@ -1,12 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/twig-base.php';
 echo $twig->render('/tv-episode.html', [
-  'show' => 'Adventures of Superman',
-  'sNum' => 1,
-  'epNum' => 1,
-  'overallEpNum' => 1,
   'epTitle' => 'Superman on Earth',
-  'content' => file_get_contents('index-contents.html'),
   'gallery' => array(
     "scr002_Kryptonian_council_in_the_Temple_of_Wisdom.jpg",
     "scr003_Jor-El_sitting_in_the_council.jpg",
@@ -20,6 +15,5 @@ echo $twig->render('/tv-episode.html', [
   'links' => array(
     '<i>The Adventures Continue</i> Comparative Review by Chris Brockow' => 'http://www.jimnolt.com//SupermanOnEarth.htm',
   ),
-  'description' => 'Information, gallery, and more about Superman on Earth, the first episode of Adventures of Superman.'
 ]);
 ?>
