@@ -4,6 +4,7 @@ echo $twig->render('/tv-episode.html', [
   'epTitle' => 'Treasure of the Incas',
   'imdbId' => 'tt0506652',
   'tacId' => 'TreasureOfTheIncasReview',
-  'noTranscript' => true
+  'noTranscript' => true,
+  'noSH' => true
 ]);
 ?>

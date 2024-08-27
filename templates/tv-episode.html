@@ -64,10 +64,13 @@
             <i>The Adventures Continue</i> Review by Bruce Dettman
           </a></li>
         {% endif %}
+        {% if not noSH %}
+        {# noSH only exists because there's a discrepancy between our numbering and SH's.
+        Eventually, a better solution will be found. #}
         <li><a href="https://www.supermanhomepage.com/tv/tv.php?topic=reviews/aos-ep0{{ overallEpNum|addZeroIfNeeded }}" target="_blank">
-          <!-- TODO: make it work if the episode number is more than 1 digit - should work now? -->
           <i>Superman Homepage</i> Review by James Lantz
         </a></li>
+        {% endif %}
         {% if not noTranscript %}
         <li><a href=
           "https://subslikescript.com/series/Adventures_of_Superman-44231/season-{{ sNum }}/episode-{{ epNum }}-{{ epTitle|replace({' ': '_'}) }}" 

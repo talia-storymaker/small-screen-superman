@@ -4,6 +4,7 @@ echo $twig->render('/tv-episode.html', [
   'epTitle' => 'Double Trouble',
   'imdbId' => 'tt0506562',
   'tacId' => 'DoubleTroubleReview',
-  'noTranscript' => true
+  'noTranscript' => true,
+  'noSH' => true
 ]);
 ?>
