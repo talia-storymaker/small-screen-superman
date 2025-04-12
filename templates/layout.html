@@ -91,6 +91,7 @@
         </nav>
         {% endif %}
         <main>
+          {% block startOfMain %}{% endblock %}
           <h1 id="beginning">{{ contentTitle | raw }}</h1>
           {% if titleCard %}
           <img class="titlecard" src="{{ titleCard.src }}" alt="{{ titleCard.alt }}">

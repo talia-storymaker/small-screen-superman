@@ -181,6 +181,11 @@ header {
 	background: var(--secondary-dark);
 }
 
+.ep-nav {
+	display: flex;
+	justify-content: space-between;
+}
+
 /* content */
 
 .main-container {

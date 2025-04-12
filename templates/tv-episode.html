@@ -36,6 +36,13 @@
   </details>
 {% endblock beforeMain %}
 
+{% block startOfMain %}
+  <nav class="ep-nav">
+    {% if epNum > 1 %}<a href="/tv/aos/s1/ep{{ epNum - 1 }}">⏴ Previous Episode</a>{% else %}<div></div>{% endif %}
+    {% if epNum < 26 %}<a href="/tv/aos/s1/ep{{ epNum + 1 }}">Next Episode ⏵</a>{% else %}<div></div>{% endif %}
+  </nav>
+{% endblock startOfMain %}
+
 {% block addlContent %}
 
   {% if gallery %}
