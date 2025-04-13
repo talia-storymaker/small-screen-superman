@@ -2,6 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/twig-base.php';
 echo $twig->render('/tv-episode.html', [
   'epTitle' => 'Superman on Earth',
+  'description' => 'Clark Kent, an alien raised by humans, moves to the great city of Metropolis and uses his powers to help humanity, using the identity Superman.',
   'gallery' => array(
     "scr002_Kryptonian_council_in_the_Temple_of_Wisdom.jpg",
     "scr003_Jor-El_sitting_in_the_council.jpg",

@@ -8,9 +8,6 @@
 {% set contentTitle = 
   "<span class='seriesname'>#{show}</span><br /> Season #{sNum} Episode #{epNum}: #{epTitle}" 
 %}
-{% set description =
-  "Information, gallery, and more about #{epTitle}, episode #{epNum} of #{show}." 
-%} {# improve later #}
 
 {% block beforeMain %}
   <details class="side-controls"><summary>Jump to:</summary>
@@ -42,6 +39,10 @@
     {% if epNum < 26 %}<a href="/tv/aos/s1/ep{{ epNum + 1 }}">Next Episode ⏵</a>{% else %}<div></div>{% endif %}
   </nav>
 {% endblock startOfMain %}
+
+{% block startOfContent %}
+  <p>{{ description }}</p>
+{% endblock startOfContent %}
 
 {% block addlContent %}
 

@@ -2,6 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/twig-base.php';
 echo $twig->render('/tv-episode.html', [
   'epTitle' => 'The Monkey Mystery',
+  'description' => "An organ grinder's monkey is part of a plot to transfer information, which Lois Lane accidentally gets wrapped up in, requiring Superman's intervention.",
   'gallery' => array(
     'scr012_Pepi_the_monkey_in_a_Superman_costume_playing_cymbals.jpg',
     'scr013_Clark_Kent,_Lois_Lane,_and_a_crowd_of_kids_look_at_the_monkey_and_organ_grinder.jpg',

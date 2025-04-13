@@ -2,6 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/twig-base.php';
 echo $twig->render('/tv-episode.html', [
   'epTitle' => 'Mystery of the Broken Statues',
+  'description' => 'A couple of men are buying and smashing small cheap statues, prompting Daily Planet reporters Clark Kent and Lois Lane to investigate why.',
   'gallery' => array(
     "scr007_Lois_Lane_in_the_artcraft_shop,_confused_and_a_bit_startled.jpg",
     "scr012_Clark_sits_on_Lois'_desk_with_a_smile_and_talks_with_her.jpg",

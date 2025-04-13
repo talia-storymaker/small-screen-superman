@@ -2,6 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/twig-base.php';
 echo $twig->render('/tv-episode.html', [
   'epTitle' => 'The Haunted Lighthouse',
+  'description' => 'Jim Olsen is visiting his aunt on an island, but when suspicious things start happening, he calls Clark Kent for help, and soon Superman needs to get involved.',
   'gallery' => array(
     "scr002_Jim_meets_Aunt_Louisa.jpg",
     "scr005_The_housekeeper_Alice.jpg",

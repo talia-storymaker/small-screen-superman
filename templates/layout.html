@@ -29,6 +29,7 @@
       <meta name="description" content="{{ description }}" />
       <meta property="og:description" content="{{ description }}" />
     {% endif %}
+    {% block head %}{% endblock %}
 	</head>
 	<body>
 		<header>
@@ -96,6 +97,7 @@
           {% if titleCard %}
           <img class="titlecard" src="{{ titleCard.src }}" alt="{{ titleCard.alt }}">
           {% endif %}
+          {% block startOfContent %}{% endblock %}
           {{ content | replace({
             '[IMG_FULL:]': '<figure class="intext"><a href=',
             '[IMG_THUMB:]': ' target="_blank"><img src=',
