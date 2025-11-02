@@ -1,12 +1,11 @@
 <?php
 function captionsAndAlts() {
   // move connection to a separate file later
-  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
-  $dotenv->load();
-  $hostname   = $_ENV['DB_HOST'];
-  $dbname     = $_ENV['DB_NAME'];
-  $username   = $_ENV['DB_USER'];
-  $password   = $_ENV['DB_PASS'];
+
+  $hostname   = getenv('DB_HOST');
+  $dbname     = getenv('DB_NAME');
+  $username   = getenv('DB_USER');
+  $password   = getenv('DB_PASS');
 
   /* Currently, captions and alts are always the same, and usually come from the
   filename. But sometimes there's an override for the caption/alt in the database.
