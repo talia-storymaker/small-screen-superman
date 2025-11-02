@@ -2,10 +2,10 @@
 function captionsAndAlts() {
   // move connection to a separate file later
 
-  $hostname   = getenv('DB_HOST');
-  $dbname     = getenv('DB_NAME');
-  $username   = getenv('DB_USER');
-  $password   = getenv('DB_PASS');
+  $hostname   = $_SERVER['DB_HOST'];
+  $dbname     = $_SERVER['DB_NAME'];
+  $username   = $_SERVER['DB_USER'];
+  $password   = $_SERVER['DB_PASS'];
 
   /* Currently, captions and alts are always the same, and usually come from the
   filename. But sometimes there's an override for the caption/alt in the database.
