@@ -21,12 +21,17 @@
     {% set gallery = glob("media/screencaps/thumbs/*.*") %}
 
     {% for img in gallery %}
+      {% set fullFilename = "/tv/aos/s#{sNum}/ep#{epNum}/#{img|replace({'thumbs/': ''})}" %}
       <a href="media/screencaps/{{ img|regexReplace('/^.*[\\/]/','') }}" target="_blank">
         <img 
-          src="{{ img }}" 
-          alt="{{ 
-            img|replace({'_': ' '})|regexReplace('/^.*[\\/]/','')[7:]|replace({'.png': '', '.jpg': '', 'COLON': ':', "''": '"'}) 
-          }}"
+          src="{{img}}" 
+          alt=" 
+            {% if altOverrides is defined and fullFilename in altOverrides|keys %}
+              {{altOverrides[fullFilename]['caption']}}
+            {% else %}
+              {{img|replace({'_': ' '})|regexReplace('/^.*[\\/]/','')[7:]|replace({'.png': '', '.jpg': '', 'COLON': ':', "''": '"'})}}
+            {% endif %}
+          "
         />
       </a>
     {% endfor %}
